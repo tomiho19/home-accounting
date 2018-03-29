@@ -11,6 +11,24 @@
       "email": "sandrez.sada@mail.ru",
       "password": "13132313",
       "name": "Юзер"
+    },
+    {
+      "email": "sandrez.spartanell@gmail.com",
+      "password": "123456789",
+      "name": "AlohASid",
+      "id": 2
+    },
+    {
+      "email": "sandrez.spartanell2@gmail.com",
+      "password": "123456",
+      "name": "I AM GROOT",
+      "id": 3
+    },
+    {
+      "email": "sandrez.sada@mail.ru",
+      "password": "87654321",
+      "name": "987654321",
+      "id": 4
     }
   ],
   "bill": {

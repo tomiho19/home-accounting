@@ -1,37 +1,99 @@
+<div
+  class="alert alert-{{message.type}}"
+  *ngIf="message.text"
+>
+  {{message.text}}
+</div>
 <p class="text-xs-center">Регистрация для получения доступа</p>
-<form>
-  <div class="form-group">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}"
+  >
     <label for="email">Email</label>
     <input
       type="text"
       class="form-control underlined"
       id="email"
       placeholder="Введите email"
+      formControlName="email"
     >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+    Text Error
+      <span *ngIf="form.get('email')['errors']['required']">
+        Email can't be empty.
+      </span>
+      <span *ngIf="form.get('email')['errors']['email']">
+        Enter correct email.
+      </span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">
+        Email now is using
+      </span>
+  </span>
   </div>
-  <div class="form-group has-error">
+
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}"
+  >
     <label for="password">Пароль</label>
     <input
       type="password"
       class="form-control underlined"
       id="password"
       placeholder="Введите пароль"
+      formControlName="password"
     >
-    <span class="form-help-text">Error message.</span>
+    <span
+      class="form-help-text"
+      *ngIf="form.get('password').invalid && form.get('password').touched"
+    >
+    Text Error
+      <span *ngIf="form.get('password')['errors']['required']">
+        Password can't be empty.
+      </span>
+      <span *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+        Password must contain more than {{form.get('password')['errors']['minlength']['requiredLength']}} characters, now {{form.get('password')['errors']['minlength']['actualLength']}}.
+      </span>
+    </span>
   </div>
-  <div class="form-group has-success">
+
+  <div
+    class="form-group has-success"
+    [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}"
+  >
     <label for="name">Имя</label>
     <input
       type="text"
       class="form-control underlined"
       id="name"
       placeholder="Введите имя"
+      formControlName="name"
     >
-    <span class="form-help-text">Success message.</span>
+    <span
+      class="form-help-text"
+      *ngIf="form.get('name').invalid && form.get('name').touched"
+    >
+    Text Error
+      <span *ngIf="form.get('name')['errors']['required']">
+        Name can't be empty.
+      </span>
+  </span>
   </div>
-  <div class="form-group">
+
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('agree').invalid && form.get('agree').touched}"
+  >
     <label for="agree">
-      <input class="checkbox" id="agree" type="checkbox">
+      <input
+        class="checkbox"
+        id="agree"
+        type="checkbox"
+        formControlName="agree"
+      >
       <span>Согласен с правилами</span>
     </label>
   </div>
@@ -41,7 +103,7 @@
   <div class="form-group">
     <p class="text-muted text-xs-center">
       Уже есть аккаунт?
-      <a href="#">
+      <a [routerLink]="'/login'">
         Войти!
       </a>
     </p>

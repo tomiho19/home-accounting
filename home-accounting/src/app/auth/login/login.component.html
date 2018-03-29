@@ -30,6 +30,7 @@
       <span *ngIf="form.get('email')['errors']['email']">
         Enter correct email
       </span>
+
   </span>
   </div>
 
@@ -53,7 +54,7 @@
       <span *ngIf="form.get('password')['errors']['required']">
         Password can't be empty
       </span>
-      <span *ngIf="form.get('password')['errors']['minlength']">
+      <span *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
         Password must contain more than {{form.get('password')['errors']['minlength']['requiredLength']}} characters, now {{form.get('password')['errors']['minlength']['actualLength']}}
       </span>
     </span>
