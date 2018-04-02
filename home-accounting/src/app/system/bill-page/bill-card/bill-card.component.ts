@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BillModule} from "../../shared/models/bill.module";
+import {BillModel} from "../../shared/models/bill.model";
 
 @Component({
   selector: 'app-bill-card',
@@ -7,7 +7,7 @@ import {BillModule} from "../../shared/models/bill.module";
   styleUrls: ['./bill-card.component.css']
 })
 export class BillCardComponent implements OnInit {
-  @Input() bill: BillModule;
+  @Input() bill: BillModel;
   @Input() currency: any;
 
   dollar: number;
@@ -17,7 +17,6 @@ export class BillCardComponent implements OnInit {
 
   ngOnInit() {
     const {rates} = this.currency;
-    console.log(rates);
     this.dollar = rates['USD'] * this.bill.value;
     this.euro = rates['NOK'] * this.bill.value
   }

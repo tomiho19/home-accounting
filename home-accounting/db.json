@@ -2,37 +2,13 @@
   "users": [
     {
       "id": 1,
-      "email": "wfm@mail.ru",
-      "password": "12345678",
-      "name": "Администратор"
-    },
-    {
-      "id": 1,
-      "email": "sandrez.sada@mail.ru",
-      "password": "13132313",
-      "name": "Юзер"
-    },
-    {
       "email": "sandrez.spartanell@gmail.com",
-      "password": "123456789",
-      "name": "AlohASid",
-      "id": 2
-    },
-    {
-      "email": "sandrez.spartanell2@gmail.com",
       "password": "123456",
-      "name": "I AM GROOT",
-      "id": 3
-    },
-    {
-      "email": "sandrez.sada@mail.ru",
-      "password": "87654321",
-      "name": "987654321",
-      "id": 4
+      "name": "Администратор"
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 91900,
     "currency": "RUB"
   },
   "categories": [
@@ -92,6 +68,38 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 1200,
+      "category": 3,
+      "date": "02.07.2017 23:28:48",
+      "description": "Test",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 3000,
+      "category": 3,
+      "date": "02.07.2017 23:29:11",
+      "description": "test 2",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 1900,
+      "category": 2,
+      "date": "02.04.2018 13:14:48",
+      "description": "Pizza",
+      "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 2000,
+      "category": 2,
+      "date": "02.04.2018 13:15:07",
+      "description": "products",
+      "id": 9
     }
   ]
 }

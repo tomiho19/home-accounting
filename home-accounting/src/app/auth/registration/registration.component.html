@@ -4,7 +4,7 @@
 >
   {{message.text}}
 </div>
-<p class="text-xs-center">Регистрация для получения доступа</p>
+<p class="text-xs-center">Registration for access</p>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div
     class="form-group"
@@ -38,7 +38,7 @@
   <div class="form-group"
        [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}"
   >
-    <label for="password">Пароль</label>
+    <label for="password">Password</label>
     <input
       type="password"
       class="form-control underlined"
@@ -64,7 +64,7 @@
     class="form-group has-success"
     [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}"
   >
-    <label for="name">Имя</label>
+    <label for="name">Name</label>
     <input
       type="text"
       class="form-control underlined"
@@ -94,17 +94,17 @@
         type="checkbox"
         formControlName="agree"
       >
-      <span>Согласен с правилами</span>
+      <span>Agree with rules</span>
     </label>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-block btn-primary">Зарегистрироваться</button>
+    <button type="submit" class="btn btn-block btn-primary">Register</button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
-      Уже есть аккаунт?
+      Have you account?
       <a [routerLink]="'/login'">
-        Войти!
+        Sign in!
       </a>
     </p>
   </div>

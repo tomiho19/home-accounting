@@ -1,0 +1,65 @@
+<section>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bordered">
+          <div class="header-block">
+            <h3 class="title">Список событий</h3>
+          </div>
+          <div class="form-inline pull-right m-r-2">
+            <div class="form-group">
+              <input type="text" [(ngModel)] = "searchValue" class="form-control" [placeholder] = 'searchPlaceholder'>
+            </div>
+            <div class="btn-group" appDropdown>
+              <button type="button" class="btn btn-secondary dropdown-toggle ">
+                Параметр
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="changeCriteria('amount')">Sum</a>
+                <a class="dropdown-item" (click)="changeCriteria('date')">Date</a>
+                <a class="dropdown-item" (click)="changeCriteria('category')">Category</a>
+                <a class="dropdown-item" (click)="changeCriteria('type')">Type</a>
+              </div>
+          </div>
+        </div>
+        <div class="card-block">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Сумма</th>
+              <th>Дата</th>
+              <th>Категория</th>
+              <th>Тип</th>
+              <th class="text-lg-center">Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let e of events | appSearch:searchValue:searchField; let idx = index">
+              <th scope="row">{{idx + 1}}</th>
+              <td>{{e.amount}}</td>
+              <td>{{e.date | appMoment: 'DD.MM.YYYY HH:mm:ss'}}</td>
+              <td>{{e.catName}}</td>
+              <td>
+                <span [ngClass]="getEventClass(e)">
+                  <span *ngIf="e.type === 'income'">
+                    Income
+                  </span>
+                  <span *ngIf="e.type === 'outcome'">
+                    Outcome
+                  </span>
+                </span>
+              </td>
+              <td class="text-lg-center">
+                <a [routerLink]="['/system/history', e.id]" class="btn btn-primary-outline">Открыть</a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

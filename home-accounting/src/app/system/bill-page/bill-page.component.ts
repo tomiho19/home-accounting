@@ -12,9 +12,9 @@ export class BillPageComponent implements OnInit, OnDestroy {
   sub1: ISubscription;
   sub2: ISubscription;
 
-  currency: any;
-  bill: any;
-  isLoaded: boolean = false
+  currency;
+  bill;
+  isLoaded = false;
 
   constructor(private billService: BillService) { }
 

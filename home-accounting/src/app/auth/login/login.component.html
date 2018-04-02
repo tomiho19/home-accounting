@@ -5,7 +5,7 @@
   {{message.text}}
 </div>
 
-<p class="text-xs-center">Войдите для работы</p>
+<p class="text-xs-center">Enter for work</p>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div
     class="form-group"
@@ -38,7 +38,7 @@
     class="form-group"
     [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}"
   >
-    <label for="password">Пароль</label>
+    <label for="password">Password</label>
     <input
       type="password"
       class="form-control underlined"
@@ -60,11 +60,11 @@
     </span>
   </div>
   <div class="form-group">
-    <button  type="submit" class="btn btn-block btn-primary">Войти</button>
+    <button  type="submit" class="btn btn-block btn-primary">Sign in</button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
-      Нет аккаунта? <a [routerLink]="'/registration'">Зарегистрироваться!</a>
+      No account? <a [routerLink]="'/registration'">Register!</a>
     </p>
   </div>
 </form>

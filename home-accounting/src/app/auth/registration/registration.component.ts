@@ -29,8 +29,8 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(){
-    let dataForm = this.form.value;
-    let user = new User(dataForm.email, dataForm.password, dataForm.name);
+    let {email, password, name} = this.form.value;
+    let user = new User(email, password, name);
     this.usersService.createNewUser(user)
       .subscribe((user: User)=>{
         this.router.navigate(['/login'], {

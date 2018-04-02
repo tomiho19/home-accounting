@@ -1,6 +1,6 @@
 <div class="title-block">
   <h3 class="title pull-left">
-    Страница счета <span class="sparkline bar"></span>
+    Score page <span class="sparkline bar"></span>
   </h3>
   <div class="pull-right">
     <button class="btn-sm btn btn-primary-outline" (click)="onRefresh()">
@@ -9,8 +9,8 @@
   </div>
 </div>
 <section class="section">
-  <div class="row text-center" *ngIf="!isLoaded">
-    ...Loading
+  <div *ngIf="!isLoaded" class="preLoader">
+    <img src="../../../assets/2 (2).gif" height="64" width="64"/>
   </div>
   <div class="row" *ngIf="isLoaded">
     <app-bill-card  [bill]="bill" [currency]="currency"></app-bill-card>

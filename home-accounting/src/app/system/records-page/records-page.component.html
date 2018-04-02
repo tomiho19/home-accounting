@@ -4,10 +4,13 @@
     </h3>
   </div>
 
-  <section class="section">
+  <div *ngIf="!isLoaded" class="preLoader">
+    <img src="../../../assets/2 (2).gif" height="64" width="64"/>
+  </div>
+  <section class="section" *ngIf="isLoaded">
     <div class="row">
-      <app-add-event></app-add-event>
-      <app-add-category></app-add-category>
-      <app-edit-category></app-edit-category>
+      <app-add-event [categories]="categories" ></app-add-event>
+      <app-add-category (onCategoryAdd)="newCategoryAdded($event)"></app-add-category>
+      <app-edit-category [categories]="categories" (onCategoryEdit)="categoryWasEdited($event)"></app-edit-category>
      </div>
   </section>
